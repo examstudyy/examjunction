@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ExamJunction</title>
 
 <style>
@@ -15,12 +14,11 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:#f6f8fc;
+  background:#f5f7fb;
   color:#172033;
   padding-bottom:70px;
 }
 
-/* HEADER */
 .header{
   height:64px;
   background:#fff;
@@ -41,18 +39,17 @@ body{
   text-decoration:none;
   color:#1264e8;
   font-size:14px;
-  font-weight:600;
+  font-weight:700;
 }
 
-/* HERO */
 .hero{
   background:#0d1b35;
   color:#fff;
-  padding:28px 18px;
+  padding:30px 18px;
 }
 
 .hero h1{
-  font-size:25px;
+  font-size:26px;
   margin-bottom:7px;
 }
 
@@ -61,38 +58,64 @@ body{
   font-size:13px;
 }
 
-/* MAIN */
 .container{
-  max-width:850px;
+  max-width:900px;
   margin:auto;
   padding:25px 16px;
 }
 
-.title{
-  font-size:20px;
+.section-title{
+  font-size:19px;
   margin-bottom:14px;
 }
 
-/* CATEGORY */
-.category{
-  display:block;
+.explore{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.explore a{
   background:#fff;
   border:1px solid #e1e5eb;
-  border-radius:9px;
-  padding:18px;
-  margin-bottom:11px;
+  border-radius:8px;
+  padding:17px 10px;
+  text-decoration:none;
+  color:#172033;
+  text-align:center;
+}
+
+.explore-icon{
+  font-size:24px;
+  margin-bottom:9px;
+}
+
+.explore h3{
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.explore p{
+  font-size:11px;
+  color:#737d8d;
+}
+
+.batch{
+  display:flex;
+  align-items:center;
+  background:#fff;
+  border:1px solid #e1e5eb;
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:10px;
   text-decoration:none;
   color:#172033;
 }
 
-.category-row{
-  display:flex;
-  align-items:center;
-}
-
-.category-icon{
-  width:44px;
-  height:44px;
+.batch-icon{
+  width:45px;
+  height:45px;
   border-radius:8px;
   background:#eaf2ff;
   display:flex;
@@ -102,16 +125,16 @@ body{
   margin-right:13px;
 }
 
-.category-info{
+.batch-info{
   flex:1;
 }
 
-.category-info h3{
-  font-size:16px;
+.batch-info h3{
+  font-size:15px;
   margin-bottom:5px;
 }
 
-.category-info p{
+.batch-info p{
   font-size:12px;
   color:#737d8d;
 }
@@ -121,7 +144,6 @@ body{
   font-size:22px;
 }
 
-/* BOTTOM NAV */
 .bottom{
   position:fixed;
   left:0;
@@ -149,13 +171,19 @@ body{
   font-weight:700;
 }
 
+@media(max-width:600px){
+  .explore{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .explore a{
+    padding:14px 5px;
+  }
+}
+
 @media(min-width:700px){
   .bottom{
     display:none;
-  }
-
-  .category:hover{
-    border-color:#1264e8;
   }
 }
 </style>
@@ -163,126 +191,105 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-
-  <div class="logo">
-    ExamJunction
-  </div>
-
-  <a href="#" class="login">
-    Login
-  </a>
-
+  <div class="logo">ExamJunction</div>
+  <a href="#" class="login">Login</a>
 </header>
 
-
-<!-- HERO -->
 <section class="hero">
-
   <h1>Padhai. Practice. Progress.</h1>
-
-  <p>
-    Apni exam preparation ek jagah se shuru karo.
-  </p>
-
+  <p>Government exam preparation, simple and organised.</p>
 </section>
 
-
-<!-- BATCH CATEGORIES -->
 <main class="container">
 
-  <h2 class="title">
-    Batches
-  </h2>
+  <h2 class="section-title">Explore</h2>
+
+  <div class="explore">
+
+    <a href="batches.html">
+      <div class="explore-icon">🚆</div>
+      <h3>Railway</h3>
+      <p>Railway Exams</p>
+    </a>
+
+    <a href="#">
+      <div class="explore-icon">📝</div>
+      <h3>SSC</h3>
+      <p>SSC Exams</p>
+    </a>
+
+    <a href="#">
+      <div class="explore-icon">🎯</div>
+      <h3>Competitive</h3>
+      <p>Other Exams</p>
+    </a>
+
+  </div>
 
 
-  <!-- RAILWAY -->
-  <a href="batches.html" class="category">
+  <h2 class="section-title">Popular Batches</h2>
 
-    <div class="category-row">
+  <a href="batches.html" class="batch">
 
-      <div class="category-icon">
-        🚆
-      </div>
+    <div class="batch-icon">🚆</div>
 
-      <div class="category-info">
-        <h3>Railway</h3>
-        <p>Railway exam preparation</p>
-      </div>
-
-      <div class="arrow">›</div>
-
+    <div class="batch-info">
+      <h3>Railway Foundation</h3>
+      <p>Complete Railway preparation</p>
     </div>
+
+    <div class="arrow">›</div>
 
   </a>
 
 
-  <!-- SSC -->
-  <a href="#" class="category">
+  <a href="#" class="batch">
 
-    <div class="category-row">
+    <div class="batch-icon">📝</div>
 
-      <div class="category-icon">
-        📝
-      </div>
-
-      <div class="category-info">
-        <h3>SSC</h3>
-        <p>SSC exam preparation</p>
-      </div>
-
-      <div class="arrow">›</div>
-
+    <div class="batch-info">
+      <h3>SSC Foundation</h3>
+      <p>Complete SSC preparation</p>
     </div>
+
+    <div class="arrow">›</div>
 
   </a>
 
 
-  <!-- COMPETITIVE -->
-  <a href="#" class="category">
+  <a href="#" class="batch">
 
-    <div class="category-row">
+    <div class="batch-icon">🎯</div>
 
-      <div class="category-icon">
-        🎯
-      </div>
-
-      <div class="category-info">
-        <h3>Competitive Exams</h3>
-        <p>Other competitive exam preparation</p>
-      </div>
-
-      <div class="arrow">›</div>
-
+    <div class="batch-info">
+      <h3>Competitive Exams</h3>
+      <p>Other competitive exam preparation</p>
     </div>
+
+    <div class="arrow">›</div>
 
   </a>
 
 </main>
 
 
-<!-- BOTTOM NAV -->
 <nav class="bottom">
 
   <a href="index.html" class="active">
-    🏠<br>
-    Home
+    🏠<br>Home
   </a>
 
   <a href="batches.html">
-    📚<br>
-    Batches
+    📚<br>Batches
   </a>
 
   <a href="#">
-    📄<br>
-    Material
+    📄<br>Material
   </a>
 
   <a href="#">
-    💼<br>
-    Jobs
+    💼<br>Jobs
   </a>
 
 </nav>
