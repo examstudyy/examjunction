@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Number System — ExamJunction</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f9fc;
+  color:#0f172a;
+  padding-bottom:70px;
+}
+
+header{
+  background:#0b1220;
+  color:white;
+  padding:16px 5%;
+}
+
+.nav{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#38bdf8;
+}
+
+.back{
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px 5%;
+}
+
+/* HERO */
+
+.hero{
+  background:#0f172a;
+  color:white;
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:25px;
+}
+
+.badge{
+  display:inline-block;
+  background:#172554;
+  color:#7dd3fc;
+  padding:7px 11px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:clamp(28px,6vw,42px);
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#cbd5e1;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* PROGRESS */
+
+.progress-box{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.progress-top strong{
+  font-size:14px;
+}
+
+.progress-top span{
+  color:#2563eb;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.progress{
+  height:8px;
+  background:#e2e8f0;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  width:20%;
+  height:100%;
+  background:#2563eb;
+}
+
+/* LESSONS */
+
+.section-title{
+  margin:25px 0 12px;
+}
+
+.section-title h2{
+  font-size:21px;
+}
+
+.section-title p{
+  color:#64748b;
+  font-size:12px;
+  margin-top:5px;
+}
+
+.lesson-list{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.lesson{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:17px;
+  border-bottom:1px solid #edf2f7;
+}
+
+.lesson:last-child{
+  border-bottom:0;
+}
+
+.lesson-left{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.lesson-number{
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  background:#eff6ff;
+  color:#2563eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.lesson h3{
+  font-size:14px;
+}
+
+.lesson p{
+  color:#64748b;
+  font-size:11px;
+  margin-top:4px;
+}
+
+.watch{
+  text-decoration:none;
+  background:#2563eb;
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* NOTES */
+
+.notes{
+  background:#eaf4ff;
+  border:1px solid #cfe8ff;
+  border-radius:16px;
+  padding:20px;
+  margin-top:20px;
+}
+
+.notes h3{
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.notes p{
+  color:#475569;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.note-button{
+  display:inline-block;
+  margin-top:13px;
+  background:#0f172a;
+  color:white;
+  text-decoration:none;
+  padding:9px 13px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+  background:#0b1220;
+  color:#94a3b8;
+  text-align:center;
+  padding:25px 20px;
+  margin-top:30px;
+}
+
+footer strong{
+  color:white;
+}
+
+footer p{
+  font-size:11px;
+  margin-top:6px;
+}
+
+/* MOBILE */
+
+.mobile-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:65px;
+  background:white;
+  border-top:1px solid #e2e8f0;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  z-index:100;
+}
+
+.mobile-nav a{
+  color:#64748b;
+  text-decoration:none;
+  text-align:center;
+  font-size:10px;
+}
+
+.mobile-nav span{
+  display:block;
+  font-size:18px;
+  margin-bottom:3px;
+}
+
+@media(max-width:500px){
+
+  .hero{
+    padding:25px 20px;
+  }
+
+  .lesson{
+    padding:14px;
+  }
+
+  .watch{
+    padding:7px 9px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      Exam<span>Junction</span>
+    </div>
+
+    <a class="back" href="batches.html">
+      ← Railway Foundation
+    </a>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="badge">
+      FREE CHAPTER
+    </div>
+
+    <h1>Number System</h1>
+
+    <p>
+      Railway exams ke liye Number System ko
+      basic level se samjho aur step-by-step practice karo.
+    </p>
+
+  </section>
+
+
+  <!-- PROGRESS -->
+
+  <section class="progress-box">
+
+    <div class="progress-top">
+
+      <strong>Your Progress</strong>
+
+      <span>20% Complete</span>
+
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+
+  </section>
+
+
+  <!-- LESSONS -->
+
+  <div class="section-title">
+
+    <h2>📚 Lessons</h2>
+
+    <p>
+      Pehle concept dekho, phir practice karo.
+    </p>
+
+  </div>
+
+
+  <div class="lesson-list">
+
+    <div class="lesson">
+
+      <div class="lesson-left">
+
+        <div class="lesson-number">
+          01
+        </div>
+
+        <div>
+
+          <h3>Number System Introduction</h3>
+
+          <p>
+            Numbers kya hote hain aur basic types
+          </p>
+
+        </div>
+
+      </div>
+
+      <a class="watch" href="#">
+        Start →
+      </a>
+
+    </div>
+
+
+    <div class="lesson">
+
+      <div class="lesson-left">
+
+        <div class="lesson-number">
+          02
+        </div>
+
+        <div>
+
+          <h3>Natural & Whole Numbers</h3>
+
+          <p>
+            Basic concepts with examples
+          </p>
+
+        </div>
+
+      </div>
+
+      <a class="watch" href="#">
+        Start →
+      </a>
+
+    </div>
+
+
+    <div class="lesson">
+
+      <div class="lesson-left">
+
+        <div class="lesson-number">
+          03
+        </div>
+
+        <div>
+
+          <h3>Integers</h3>
+
+          <p>
+            Positive, negative numbers & zero
+          </p>
+
+        </div>
+
+      </div>
+
+      <a class="watch" href="#">
+        Start →
+      </a>
+
+    </div>
+
+
+    <div class="lesson">
+
+      <div class="lesson-left">
+
+        <div class="lesson-number">
+          04
+        </div>
+
+        <div>
+
+          <h3>Even & Odd Numbers</h3>
+
+          <p>
+            Rules and exam-based examples
+          </p>
+
+        </div>
+
+      </div>
+
+      <a class="watch" href="#">
+        Start →
+      </a>
+
+    </div>
+
+
+    <div class="lesson">
+
+      <div class="lesson-left">
+
+        <div class="lesson-number">
+          05
+        </div>
+
+        <div>
+
+          <h3>Practice Questions</h3>
+
+          <p>
+            Basic Railway-level questions
+          </p>
+
+        </div>
+
+      </div>
+
+      <a class="watch" href="#">
+        Practice →
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- NOTES -->
+
+  <div class="notes">
+
+    <h3>📄 Chapter Notes</h3>
+
+    <p>
+      Number System ke important concepts aur
+      short revision points yahan available honge.
+    </p>
+
+    <a class="note-button" href="#">
+      Notes — Coming Soon
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <strong>ExamJunction</strong>
+
+  <p>Padhai. Practice. Progress.</p>
+
+  <p>© 2026 ExamJunction</p>
+
+</footer>
+
+
+<div class="mobile-nav">
+
+  <a href="index.html">
+    <span>⌂</span>
+    Home
+  </a>
+
+  <a href="batches.html">
+    <span>📚</span>
+    Batches
+  </a>
+
+  <a href="index.html#classes">
+    <span>🎥</span>
+    Classes
+  </a>
+
+  <a href="index.html#material">
+    <span>📄</span>
+    Material
+  </a>
+
+  <a href="index.html#jobs">
+    <span>💼</span>
+    Jobs
+  </a>
+
+</div>
+
+</body>
+  </html>
