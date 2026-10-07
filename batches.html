@@ -1,193 +1,121 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Railway Foundation — ExamJunction</title>
+<title>Railway Foundation - ExamJunction</title>
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7f9fc;
-  color:#0f172a;
-  padding-bottom:75px;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
 }
 
-header{
-  background:#0b1220;
-  color:white;
+.header{
+  background:#fff;
   padding:16px 5%;
-}
-
-.nav{
-  max-width:1100px;
-  margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #e5e7eb;
 }
 
 .logo{
-  font-size:23px;
+  font-size:22px;
   font-weight:800;
+  color:#1264e8;
 }
 
-.logo span{
-  color:#38bdf8;
-}
-
-.back{
-  color:#cbd5e1;
+.home{
   text-decoration:none;
-  font-size:13px;
+  color:#333;
+  font-size:14px;
 }
 
 .hero{
-  max-width:1100px;
-  margin:auto;
-  padding:35px 5% 25px;
-}
-
-.hero-box{
-  background:#0f172a;
-  color:white;
-  border-radius:22px;
-  padding:35px;
-}
-
-.badge{
-  display:inline-block;
-  background:#172554;
-  color:#7dd3fc;
-  padding:7px 11px;
-  border-radius:20px;
-  font-size:11px;
-  font-weight:bold;
-  margin-bottom:15px;
+  background:#0d1b35;
+  color:#fff;
+  padding:28px 5%;
 }
 
 .hero h1{
-  font-size:clamp(30px,6vw,45px);
-  margin-bottom:10px;
+  font-size:25px;
+  margin-bottom:7px;
 }
 
 .hero p{
   color:#cbd5e1;
-  line-height:1.6;
-  max-width:650px;
+  font-size:14px;
 }
 
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:25px 5%;
+.container{
+  max-width:850px;
+  margin:25px auto;
+  padding:0 16px 90px;
 }
 
-.section h2{
-  font-size:24px;
-  margin-bottom:6px;
-}
-
-.subtext{
-  color:#64748b;
-  font-size:13px;
-  margin-bottom:20px;
+.subject-title{
+  font-size:21px;
+  margin-bottom:15px;
 }
 
 /* CHAPTER */
 
-.chapter-list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
 .chapter{
-  background:white;
-  border:1px solid #e2e8f0;
-  border-radius:16px;
+  background:#fff;
+  border:1px solid #e2e6ed;
+  border-radius:8px;
+  margin-bottom:10px;
   overflow:hidden;
 }
 
 .chapter-head{
-  padding:18px;
+  padding:17px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:15px;
+  align-items:center;
   cursor:pointer;
 }
 
-.chapter-left{
-  display:flex;
-  align-items:center;
-  gap:13px;
-}
-
-.number{
-  width:38px;
-  height:38px;
-  border-radius:10px;
-  background:#eff6ff;
-  color:#2563eb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  font-weight:bold;
-  flex-shrink:0;
-}
-
-.chapter h3{
-  font-size:15px;
-}
-
-.chapter p{
-  color:#64748b;
-  font-size:11px;
-  margin-top:4px;
+.chapter-name{
+  font-size:16px;
+  font-weight:700;
 }
 
 .arrow{
-  color:#64748b;
   font-size:18px;
   transition:.2s;
-}
-
-.chapter-content{
-  display:none;
-  border-top:1px solid #edf2f7;
-  padding:8px 18px 18px;
-}
-
-.chapter.open .chapter-content{
-  display:block;
 }
 
 .chapter.open .arrow{
   transform:rotate(180deg);
 }
 
-/* LECTURES */
+.chapter-content{
+  display:none;
+  border-top:1px solid #e5e7eb;
+  background:#fafbfc;
+}
+
+.chapter.open .chapter-content{
+  display:block;
+}
+
+/* LECTURE */
 
 .lecture{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:12px;
-  padding:13px 0;
-  border-bottom:1px solid #edf2f7;
-}
-
-.lecture:last-of-type{
-  border-bottom:0;
+  align-items:center;
+  padding:14px 16px;
+  border-bottom:1px solid #e8ebef;
 }
 
 .lecture-info{
@@ -197,145 +125,76 @@ header{
 }
 
 .play{
-  width:30px;
-  height:30px;
-  border-radius:8px;
-  background:#eff6ff;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#e8f1ff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:14px;
-}
-
-.lecture h4{
+  color:#1264e8;
   font-size:13px;
 }
 
-.lecture p{
-  color:#64748b;
-  font-size:10px;
-  margin-top:3px;
+.lecture-title{
+  font-size:14px;
 }
 
 .watch{
-  background:#2563eb;
-  color:white;
   text-decoration:none;
-  padding:7px 10px;
-  border-radius:7px;
-  font-size:10px;
-  font-weight:bold;
-  white-space:nowrap;
+  color:#1264e8;
+  font-size:13px;
+  font-weight:700;
 }
 
 /* NOTES */
 
 .notes{
-  margin-top:12px;
-  padding-top:14px;
-  border-top:1px solid #edf2f7;
+  padding:15px 16px;
 }
 
 .notes a{
-  display:inline-block;
-  background:#0f172a;
-  color:white;
+  display:block;
   text-decoration:none;
-  padding:8px 12px;
-  border-radius:7px;
-  font-size:10px;
-  font-weight:bold;
+  background:#fff;
+  border:1px solid #dbe2eb;
+  padding:12px;
+  border-radius:6px;
+  color:#1264e8;
+  font-size:14px;
+  font-weight:600;
 }
 
-/* INFO */
+/* BOTTOM NAV */
 
-.info{
-  background:#eaf4ff;
-  border:1px solid #cfe8ff;
-  border-radius:16px;
-  padding:22px;
-  margin-top:10px;
-}
-
-.info h3{
-  font-size:17px;
-  margin-bottom:8px;
-}
-
-.info p{
-  color:#475569;
-  font-size:12px;
-  line-height:1.6;
-}
-
-/* FOOTER */
-
-footer{
-  background:#0b1220;
-  color:#94a3b8;
-  text-align:center;
-  padding:28px 20px;
-  margin-top:25px;
-}
-
-footer strong{
-  color:white;
-}
-
-footer p{
-  font-size:11px;
-  margin-top:6px;
-}
-
-/* MOBILE NAV */
-
-.mobile-nav{
+.bottom-nav{
   position:fixed;
-  display:flex;
   bottom:0;
   left:0;
   right:0;
-  height:65px;
-  background:white;
-  border-top:1px solid #e2e8f0;
-  z-index:100;
+  height:62px;
+  background:#fff;
+  border-top:1px solid #ddd;
+  display:flex;
   justify-content:space-around;
   align-items:center;
 }
 
-.mobile-nav a{
+.bottom-nav a{
   text-decoration:none;
-  color:#64748b;
-  font-size:10px;
+  color:#555;
+  font-size:12px;
   text-align:center;
 }
 
-.mobile-nav span{
-  display:block;
-  font-size:18px;
-  margin-bottom:3px;
+.bottom-nav .active{
+  color:#1264e8;
+  font-weight:700;
 }
 
-@media(max-width:500px){
-
-  .hero-box{
-    padding:28px 20px;
-  }
-
-  .chapter-head{
-    padding:15px;
-  }
-
-  .chapter-content{
-    padding:8px 15px 15px;
-  }
-
-  .lecture{
-    align-items:flex-start;
-  }
-
-  .watch{
-    margin-top:2px;
+@media(min-width:700px){
+  .bottom-nav{
+    display:none;
   }
 }
 </style>
@@ -343,305 +202,250 @@ footer p{
 
 <body>
 
-<header>
-
-  <div class="nav">
-
-    <div class="logo">
-      Exam<span>Junction</span>
-    </div>
-
-    <a class="back" href="index.html">
-      ← Home
-    </a>
-
-  </div>
-
+<header class="header">
+  <div class="logo">ExamJunction</div>
+  <a class="home" href="index.html">Home</a>
 </header>
 
-
 <section class="hero">
-
-  <div class="hero-box">
-
-    <div class="badge">
-      FREE BATCH
-    </div>
-
-    <h1>Railway Foundation</h1>
-
-    <p>
-      Railway preparation ko zero level se
-      systematically start karo.
-      Chapter choose karo aur lectures se padhna shuru karo.
-    </p>
-
-  </div>
-
+  <h1>Railway Foundation</h1>
+  <p>Complete your Railway preparation step by step.</p>
 </section>
 
+<main class="container">
 
-<section class="section">
+<h2 class="subject-title">Mathematics</h2>
 
-  <h2>📐 Mathematics</h2>
+<!-- NUMBER SYSTEM -->
+<div class="chapter">
+  <div class="chapter-head" onclick="toggleChapter(this)">
+    <span class="chapter-name">1. Number System</span>
+    <span class="arrow">⌄</span>
+  </div>
 
-  <p class="subtext">
-    Chapter choose karo → lectures dekho → notes se revision karo.
-  </p>
+  <div class="chapter-content">
 
-
-  <div class="chapter-list">
-
-
-    <!-- NUMBER SYSTEM -->
-
-    <div class="chapter">
-
-      <div class="chapter-head" onclick="toggleChapter(this)">
-
-        <div class="chapter-left">
-
-          <div class="number">01</div>
-
-          <div>
-            <h3>Number System</h3>
-            <p>Basic concepts & important questions</p>
-          </div>
-
-        </div>
-
-        <div class="arrow">⌄</div>
-
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 1 — Number System Basics</span>
       </div>
-
-
-      <div class="chapter-content">
-
-        <div class="lecture">
-
-          <div class="lecture-info">
-            <div class="play">▶</div>
-
-            <div>
-              <h4>Lecture 1</h4>
-              <p>Number System — Introduction</p>
-            </div>
-          </div>
-
-          <a class="watch" href="#">Start →</a>
-
-        </div>
-
-
-        <div class="lecture">
-
-          <div class="lecture-info">
-            <div class="play">▶</div>
-
-            <div>
-              <h4>Lecture 2</h4>
-              <p>Natural & Whole Numbers</p>
-            </div>
-          </div>
-
-          <a class="watch" href="#">Start →</a>
-
-        </div>
-
-
-        <div class="lecture">
-
-          <div class="lecture-info">
-            <div class="play">▶</div>
-
-            <div>
-              <h4>Lecture 3</h4>
-              <p>Integers & Number Types</p>
-            </div>
-          </div>
-
-          <a class="watch" href="#">Start →</a>
-
-        </div>
-
-
-        <div class="lecture">
-
-          <div class="lecture-info">
-            <div class="play">▶</div>
-
-            <div>
-              <h4>Lecture 4</h4>
-              <p>Even & Odd Numbers</p>
-            </div>
-          </div>
-
-          <a class="watch" href="#">Start →</a>
-
-        </div>
-
-
-        <div class="lecture">
-
-          <div class="lecture-info">
-            <div class="play">▶</div>
-
-            <div>
-              <h4>Lecture 5</h4>
-              <p>Important Concepts</p>
-            </div>
-          </div>
-
-          <a class="watch" href="#">Start →</a>
-
-        </div>
-
-
-        <div class="notes">
-
-          <a href="#">
-            📄 Number System Notes
-          </a>
-
-        </div>
-
-      </div>
-
+      <a class="watch" href="#">Watch</a>
     </div>
 
-
-    <!-- DIVISIBILITY -->
-
-    <div class="chapter">
-
-      <div class="chapter-head" onclick="toggleChapter(this)">
-
-        <div class="chapter-left">
-
-          <div class="number">02</div>
-
-          <div>
-            <h3>Divisibility Rules</h3>
-            <p>Rules, tricks & examples</p>
-          </div>
-
-        </div>
-
-        <div class="arrow">⌄</div>
-
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 2 — Types of Numbers</span>
       </div>
-
-
-      <div class="chapter-content">
-
-        <div class="lecture">
-          <div class="lecture-info">
-            <div class="play">▶</div>
-            <div>
-              <h4>Lecture 1</h4>
-              <p>Divisibility Rules — Basics</p>
-            </div>
-          </div>
-          <a class="watch" href="#">Start →</a>
-        </div>
-
-        <div class="lecture">
-          <div class="lecture-info">
-            <div class="play">▶</div>
-            <div>
-              <h4>Lecture 2</h4>
-              <p>Important Divisibility Rules</p>
-            </div>
-          </div>
-          <a class="watch" href="#">Start →</a>
-        </div>
-
-        <div class="lecture">
-          <div class="lecture-info">
-            <div class="play">▶</div>
-            <div>
-              <h4>Lecture 3</h4>
-              <p>Exam Examples</p>
-            </div>
-          </div>
-          <a class="watch" href="#">Start →</a>
-        </div>
-
-        <div class="notes">
-          <a href="#">📄 Divisibility Rules Notes</a>
-        </div>
-
-      </div>
-
+      <a class="watch" href="#">Watch</a>
     </div>
 
-
-    <!-- PERCENTAGE -->
-
-    <div class="chapter">
-
-      <div class="chapter-head" onclick="toggleChapter(this)">
-
-        <div class="chapter-left">
-
-          <div class="number">03</div>
-
-          <div>
-            <h3>Percentage</h3>
-            <p>Concepts & examples</p>
-          </div>
-
-        </div>
-
-        <div class="arrow">⌄</div>
-
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 3 — Basic Questions</span>
       </div>
-
-
-      <div class="chapter-content">
-
-        <div class="lecture">
-          <div class="lecture-info">
-            <div class="play">▶</div>
-            <div>
-              <h4>Lecture 1</h4>
-              <p>Percentage — Basic Concept</p>
-            </div>
-          </div>
-          <a class="watch" href="#">Start →</a>
-        </div>
-
-        <div class="lecture">
-          <div class="lecture-info">
-            <div class="play">▶</div>
-            <div>
-              <h4>Lecture 2</h4>
-              <p>Percentage Calculations</p>
-            </div>
-          </div>
-          <a class="watch" href="#">Start →</a>
-        </div>
-
-        <div class="lecture">
-          <div class="lecture-info">
-            <div class="play">▶</div>
-            <div>
-              <h4>Lecture 3</h4>
-              <p>Exam Questions</p>
-            </div>
-          </div>
-          <a class="watch" href="#">Start →</a>
-        </div>
-
-        <div class="notes">
-          <a href="#">📄 Percentage Notes</a>
-        </div>
-
-      </div>
-
+      <a class="watch" href="#">Watch</a>
     </div>
 
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 4 — Advanced Questions</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
 
-    <!-- PROFIT LOSS -->
+    <div class="notes">
+      <a href="#">📄 Number System — Notes</a>
+    </div>
 
-    <div
+  </div>
+</div>
+
+
+<!-- DIVISIBILITY -->
+<div class="chapter">
+  <div class="chapter-head" onclick="toggleChapter(this)">
+    <span class="chapter-name">2. Divisibility Rules</span>
+    <span class="arrow">⌄</span>
+  </div>
+
+  <div class="chapter-content">
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 1 — Divisibility Basics</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 2 — Rules</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 3 — Questions</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="notes">
+      <a href="#">📄 Divisibility Rules — Notes</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- PERCENTAGE -->
+<div class="chapter">
+  <div class="chapter-head" onclick="toggleChapter(this)">
+    <span class="chapter-name">3. Percentage</span>
+    <span class="arrow">⌄</span>
+  </div>
+
+  <div class="chapter-content">
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 1 — Percentage Basics</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 2 — Concepts</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 3 — Questions</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="notes">
+      <a href="#">📄 Percentage — Notes</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- PROFIT LOSS -->
+<div class="chapter">
+  <div class="chapter-head" onclick="toggleChapter(this)">
+    <span class="chapter-name">4. Profit & Loss</span>
+    <span class="arrow">⌄</span>
+  </div>
+
+  <div class="chapter-content">
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 1 — Basic Concepts</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 2 — Questions</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 3 — Advanced Questions</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="notes">
+      <a href="#">📄 Profit & Loss — Notes</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- RATIO -->
+<div class="chapter">
+  <div class="chapter-head" onclick="toggleChapter(this)">
+    <span class="chapter-name">5. Ratio & Proportion</span>
+    <span class="arrow">⌄</span>
+  </div>
+
+  <div class="chapter-content">
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 1 — Ratio Basics</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 2 — Proportion</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="lecture">
+      <div class="lecture-info">
+        <div class="play">▶</div>
+        <span class="lecture-title">Lecture 3 — Questions</span>
+      </div>
+      <a class="watch" href="#">Watch</a>
+    </div>
+
+    <div class="notes">
+      <a href="#">📄 Ratio & Proportion — Notes</a>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+
+<nav class="bottom-nav">
+  <a class="active" href="index.html">⌂<br>Home</a>
+  <a href="batches.html">▣<br>Batches</a>
+  <a href="#">▶<br>Classes</a>
+  <a href="#">📄<br>Material</a>
+  <a href="#">☰<br>Jobs</a>
+</nav>
+
+
+<script>
+function toggleChapter(head){
+  const chapter = head.parentElement;
+  chapter.classList.toggle("open");
+}
+</script>
+
+</body>
+      </html>
