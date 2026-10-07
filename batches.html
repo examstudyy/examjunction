@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Batches — ExamJunction</title>
+<title>Railway Foundation — ExamJunction</title>
 
 <style>
 *{
@@ -20,7 +20,6 @@ body{
   padding-bottom:75px;
 }
 
-/* HEADER */
 header{
   background:#0b1220;
   color:white;
@@ -50,11 +49,10 @@ header{
   font-size:13px;
 }
 
-/* HERO */
 .hero{
   max-width:1100px;
   margin:auto;
-  padding:40px 5% 25px;
+  padding:35px 5% 25px;
 }
 
 .hero-box{
@@ -75,7 +73,7 @@ header{
   margin-bottom:15px;
 }
 
-h1{
+.hero h1{
   font-size:clamp(30px,6vw,45px);
   margin-bottom:10px;
 }
@@ -86,7 +84,6 @@ h1{
   max-width:650px;
 }
 
-/* SUBJECTS */
 .section{
   max-width:1100px;
   margin:auto;
@@ -104,88 +101,40 @@ h1{
   margin-bottom:20px;
 }
 
-.subjects{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
+/* CHAPTER */
 
-.subject{
-  background:white;
-  border:1px solid #e2e8f0;
-  border-radius:16px;
-  padding:20px;
-  transition:.2s;
-}
-
-.subject:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(15,23,42,.07);
-}
-
-.subject-icon{
-  width:45px;
-  height:45px;
-  border-radius:12px;
-  background:#eff6ff;
+.chapter-list{
   display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  margin-bottom:14px;
+  flex-direction:column;
+  gap:12px;
 }
 
-.subject h3{
-  font-size:17px;
-  margin-bottom:6px;
-}
-
-.subject p{
-  color:#64748b;
-  font-size:12px;
-  line-height:1.5;
-}
-
-.open{
-  display:inline-block;
-  margin-top:15px;
-  color:#2563eb;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:bold;
-}
-
-/* CHAPTERS */
-.chapter-box{
+.chapter{
   background:white;
   border:1px solid #e2e8f0;
   border-radius:16px;
   overflow:hidden;
 }
 
-.chapter{
-  padding:18px 20px;
-  border-bottom:1px solid #edf2f7;
+.chapter-head{
+  padding:18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-}
-
-.chapter:last-child{
-  border-bottom:0;
+  cursor:pointer;
 }
 
 .chapter-left{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:13px;
 }
 
 .number{
-  width:32px;
-  height:32px;
-  border-radius:9px;
+  width:38px;
+  height:38px;
+  border-radius:10px;
   background:#eff6ff;
   color:#2563eb;
   display:flex;
@@ -193,10 +142,11 @@ h1{
   justify-content:center;
   font-size:12px;
   font-weight:bold;
+  flex-shrink:0;
 }
 
 .chapter h3{
-  font-size:14px;
+  font-size:15px;
 }
 
 .chapter p{
@@ -205,16 +155,100 @@ h1{
   margin-top:4px;
 }
 
-.free{
-  background:#dcfce7;
-  color:#15803d;
-  padding:6px 9px;
-  border-radius:6px;
+.arrow{
+  color:#64748b;
+  font-size:18px;
+  transition:.2s;
+}
+
+.chapter-content{
+  display:none;
+  border-top:1px solid #edf2f7;
+  padding:8px 18px 18px;
+}
+
+.chapter.open .chapter-content{
+  display:block;
+}
+
+.chapter.open .arrow{
+  transform:rotate(180deg);
+}
+
+/* LECTURES */
+
+.lecture{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px solid #edf2f7;
+}
+
+.lecture:last-of-type{
+  border-bottom:0;
+}
+
+.lecture-info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.play{
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  background:#eff6ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+}
+
+.lecture h4{
+  font-size:13px;
+}
+
+.lecture p{
+  color:#64748b;
+  font-size:10px;
+  margin-top:3px;
+}
+
+.watch{
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  padding:7px 10px;
+  border-radius:7px;
+  font-size:10px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+/* NOTES */
+
+.notes{
+  margin-top:12px;
+  padding-top:14px;
+  border-top:1px solid #edf2f7;
+}
+
+.notes a{
+  display:inline-block;
+  background:#0f172a;
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:7px;
   font-size:10px;
   font-weight:bold;
 }
 
 /* INFO */
+
 .info{
   background:#eaf4ff;
   border:1px solid #cfe8ff;
@@ -235,6 +269,7 @@ h1{
 }
 
 /* FOOTER */
+
 footer{
   background:#0b1220;
   color:#94a3b8;
@@ -253,6 +288,7 @@ footer p{
 }
 
 /* MOBILE NAV */
+
 .mobile-nav{
   position:fixed;
   display:flex;
@@ -280,28 +316,27 @@ footer p{
   margin-bottom:3px;
 }
 
-@media(max-width:800px){
-
-  .subjects{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-}
-
 @media(max-width:500px){
 
   .hero-box{
     padding:28px 20px;
   }
 
-  .subjects{
-    grid-template-columns:1fr;
-  }
-
-  .chapter{
+  .chapter-head{
     padding:15px;
   }
 
+  .chapter-content{
+    padding:8px 15px 15px;
+  }
+
+  .lecture{
+    align-items:flex-start;
+  }
+
+  .watch{
+    margin-top:2px;
+  }
 }
 </style>
 </head>
@@ -336,8 +371,9 @@ footer p{
     <h1>Railway Foundation</h1>
 
     <p>
-      Railway exam preparation ko zero level se
-      systematically start karo. Concepts → Practice → Revision.
+      Railway preparation ko zero level se
+      systematically start karo.
+      Chapter choose karo aur lectures se padhna shuru karo.
     </p>
 
   </div>
@@ -347,441 +383,265 @@ footer p{
 
 <section class="section">
 
-  <h2>Subjects</h2>
+  <h2>📐 Mathematics</h2>
 
   <p class="subtext">
-    Apna subject choose karke preparation start karo.
+    Chapter choose karo → lectures dekho → notes se revision karo.
   </p>
 
 
-  <div class="subjects">
-
-    <div class="subject">
-
-      <div class="subject-icon">📐</div>
-
-      <h3>Mathematics</h3>
-
-      <p>
-        Basic concepts se calculation aur
-        exam-level questions tak.
-      </p>
-
-      <a class="open" href="#math">
-        View Topics →
-      </a>
-
-    </div>
+  <div class="chapter-list">
 
 
-    <div class="subject">
-
-      <div class="subject-icon">🧠</div>
-
-      <h3>Reasoning</h3>
-
-      <p>
-        Series, analogy, coding aur important
-        reasoning concepts.
-      </p>
-
-      <a class="open" href="#reasoning">
-        View Topics →
-      </a>
-
-    </div>
-
-
-    <div class="subject">
-
-      <div class="subject-icon">🔬</div>
-
-      <h3>General Science</h3>
-
-      <p>
-        Physics, Chemistry aur Biology ke
-        important exam topics.
-      </p>
-
-      <a class="open" href="#science">
-        View Topics →
-      </a>
-
-    </div>
-
-
-    <div class="subject">
-
-      <div class="subject-icon">🌍</div>
-
-      <h3>GK & GA</h3>
-
-      <p>
-        General Awareness aur important
-        static topics.
-      </p>
-
-      <a class="open" href="#gk">
-        View Topics →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="math">
-
-  <h2>Mathematics</h2>
-
-  <p class="subtext">
-    Foundation topics — one step at a time.
-  </p>
-
-
-  <div class="chapter-box">
+    <!-- NUMBER SYSTEM -->
 
     <div class="chapter">
 
-      <div class="chapter-left">
+      <div class="chapter-head" onclick="toggleChapter(this)">
 
-        <div class="number">01</div>
+        <div class="chapter-left">
 
-        <div>
-          <h3>Number System</h3>
-          <p>Basic concepts & questions</p>
+          <div class="number">01</div>
+
+          <div>
+            <h3>Number System</h3>
+            <p>Basic concepts & important questions</p>
+          </div>
+
+        </div>
+
+        <div class="arrow">⌄</div>
+
+      </div>
+
+
+      <div class="chapter-content">
+
+        <div class="lecture">
+
+          <div class="lecture-info">
+            <div class="play">▶</div>
+
+            <div>
+              <h4>Lecture 1</h4>
+              <p>Number System — Introduction</p>
+            </div>
+          </div>
+
+          <a class="watch" href="#">Start →</a>
+
+        </div>
+
+
+        <div class="lecture">
+
+          <div class="lecture-info">
+            <div class="play">▶</div>
+
+            <div>
+              <h4>Lecture 2</h4>
+              <p>Natural & Whole Numbers</p>
+            </div>
+          </div>
+
+          <a class="watch" href="#">Start →</a>
+
+        </div>
+
+
+        <div class="lecture">
+
+          <div class="lecture-info">
+            <div class="play">▶</div>
+
+            <div>
+              <h4>Lecture 3</h4>
+              <p>Integers & Number Types</p>
+            </div>
+          </div>
+
+          <a class="watch" href="#">Start →</a>
+
+        </div>
+
+
+        <div class="lecture">
+
+          <div class="lecture-info">
+            <div class="play">▶</div>
+
+            <div>
+              <h4>Lecture 4</h4>
+              <p>Even & Odd Numbers</p>
+            </div>
+          </div>
+
+          <a class="watch" href="#">Start →</a>
+
+        </div>
+
+
+        <div class="lecture">
+
+          <div class="lecture-info">
+            <div class="play">▶</div>
+
+            <div>
+              <h4>Lecture 5</h4>
+              <p>Important Concepts</p>
+            </div>
+          </div>
+
+          <a class="watch" href="#">Start →</a>
+
+        </div>
+
+
+        <div class="notes">
+
+          <a href="#">
+            📄 Number System Notes
+          </a>
+
         </div>
 
       </div>
 
-      <span class="free">FREE</span>
+    </div>
 
-    </div> <a class="open" href="number-system.html">Open →</a>
 
+    <!-- DIVISIBILITY -->
 
     <div class="chapter">
 
-      <div class="chapter-left">
+      <div class="chapter-head" onclick="toggleChapter(this)">
 
-        <div class="number">02</div>
+        <div class="chapter-left">
 
-        <div>
-          <h3>Divisibility Rules</h3>
-          <p>Rules, tricks & practice</p>
+          <div class="number">02</div>
+
+          <div>
+            <h3>Divisibility Rules</h3>
+            <p>Rules, tricks & examples</p>
+          </div>
+
+        </div>
+
+        <div class="arrow">⌄</div>
+
+      </div>
+
+
+      <div class="chapter-content">
+
+        <div class="lecture">
+          <div class="lecture-info">
+            <div class="play">▶</div>
+            <div>
+              <h4>Lecture 1</h4>
+              <p>Divisibility Rules — Basics</p>
+            </div>
+          </div>
+          <a class="watch" href="#">Start →</a>
+        </div>
+
+        <div class="lecture">
+          <div class="lecture-info">
+            <div class="play">▶</div>
+            <div>
+              <h4>Lecture 2</h4>
+              <p>Important Divisibility Rules</p>
+            </div>
+          </div>
+          <a class="watch" href="#">Start →</a>
+        </div>
+
+        <div class="lecture">
+          <div class="lecture-info">
+            <div class="play">▶</div>
+            <div>
+              <h4>Lecture 3</h4>
+              <p>Exam Examples</p>
+            </div>
+          </div>
+          <a class="watch" href="#">Start →</a>
+        </div>
+
+        <div class="notes">
+          <a href="#">📄 Divisibility Rules Notes</a>
         </div>
 
       </div>
 
-      <span class="free">FREE</span>
-
     </div>
 
 
+    <!-- PERCENTAGE -->
+
     <div class="chapter">
 
-      <div class="chapter-left">
+      <div class="chapter-head" onclick="toggleChapter(this)">
 
-        <div class="number">03</div>
+        <div class="chapter-left">
 
-        <div>
-          <h3>Percentage</h3>
-          <p>Concepts & examples</p>
+          <div class="number">03</div>
+
+          <div>
+            <h3>Percentage</h3>
+            <p>Concepts & examples</p>
+          </div>
+
+        </div>
+
+        <div class="arrow">⌄</div>
+
+      </div>
+
+
+      <div class="chapter-content">
+
+        <div class="lecture">
+          <div class="lecture-info">
+            <div class="play">▶</div>
+            <div>
+              <h4>Lecture 1</h4>
+              <p>Percentage — Basic Concept</p>
+            </div>
+          </div>
+          <a class="watch" href="#">Start →</a>
+        </div>
+
+        <div class="lecture">
+          <div class="lecture-info">
+            <div class="play">▶</div>
+            <div>
+              <h4>Lecture 2</h4>
+              <p>Percentage Calculations</p>
+            </div>
+          </div>
+          <a class="watch" href="#">Start →</a>
+        </div>
+
+        <div class="lecture">
+          <div class="lecture-info">
+            <div class="play">▶</div>
+            <div>
+              <h4>Lecture 3</h4>
+              <p>Exam Questions</p>
+            </div>
+          </div>
+          <a class="watch" href="#">Start →</a>
+        </div>
+
+        <div class="notes">
+          <a href="#">📄 Percentage Notes</a>
         </div>
 
       </div>
 
-      <span class="free">FREE</span>
-
     </div>
 
 
-    <div class="chapter">
+    <!-- PROFIT LOSS -->
 
-      <div class="chapter-left">
-
-        <div class="number">04</div>
-
-        <div>
-          <h3>Profit & Loss</h3>
-          <p>Basic to exam questions</p>
-        </div>
-
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-
-        <div class="number">05</div>
-
-        <div>
-          <h3>Ratio & Proportion</h3>
-          <p>Concept + practice</p>
-        </div>
-
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="reasoning">
-
-  <h2>Reasoning</h2>
-
-  <p class="subtext">
-    Important foundation topics.
-  </p>
-
-
-  <div class="chapter-box">
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">01</div>
-
-        <div>
-          <h3>Number Series</h3>
-          <p>Basic patterns</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">02</div>
-
-        <div>
-          <h3>Analogy</h3>
-          <p>Concept & practice</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">03</div>
-
-        <div>
-          <h3>Coding-Decoding</h3>
-          <p>Basic approach</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="science">
-
-  <h2>General Science</h2>
-
-  <p class="subtext">
-    Railway exams ke liye important science areas.
-  </p>
-
-
-  <div class="chapter-box">
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">01</div>
-
-        <div>
-          <h3>Physics Basics</h3>
-          <p>Important concepts</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">02</div>
-
-        <div>
-          <h3>Chemistry Basics</h3>
-          <p>Important concepts</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">03</div>
-
-        <div>
-          <h3>Biology Basics</h3>
-          <p>Human body & important topics</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="gk">
-
-  <h2>GK & General Awareness</h2>
-
-  <p class="subtext">
-    Static GK ke selected topics.
-  </p>
-
-
-  <div class="chapter-box">
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">01</div>
-
-        <div>
-          <h3>Indian History</h3>
-          <p>Important events & facts</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">02</div>
-
-        <div>
-          <h3>Indian Geography</h3>
-          <p>Basic facts & concepts</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-
-    <div class="chapter">
-
-      <div class="chapter-left">
-        <div class="number">03</div>
-
-        <div>
-          <h3>Indian Polity</h3>
-          <p>Basic constitutional topics</p>
-        </div>
-      </div>
-
-      <span class="free">FREE</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section">
-
-  <div class="info">
-
-    <h3>🎯 ExamJunction ka learning system</h3>
-
-    <p>
-      Pehle concept samjho → phir examples dekho →
-      practice questions solve karo → revision karo.
-      Isi structure ko aage har batch me use kiya jayega.
-    </p>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <strong>ExamJunction</strong>
-
-  <p>Padhai. Practice. Progress.</p>
-
-  <p>© 2026 ExamJunction</p>
-
-</footer>
-
-
-<div class="mobile-nav">
-
-  <a href="index.html">
-    <span>⌂</span>
-    Home
-  </a>
-
-  <a href="batches.html">
-    <span>📚</span>
-    Batches
-  </a>
-
-  <a href="index.html#classes">
-    <span>🎥</span>
-    Classes
-  </a>
-
-  <a href="index.html#material">
-    <span>📄</span>
-    Material
-  </a>
-
-  <a href="index.html#jobs">
-    <span>💼</span>
-    Jobs
-  </a>
-
-</div>
-
-</body>
-</html>
+    <div
