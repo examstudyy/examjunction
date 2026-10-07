@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ExamJunction — Padhai. Practice. Progress.</title>
+<title>ExamJunction - Learn. Practice. Progress.</title>
 
 <style>
 *{
@@ -13,455 +13,258 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7f9fc;
-  color:#111827;
-  padding-bottom:75px;
+  font-family:Arial,sans-serif;
+  background:#f6f8fc;
+  color:#172033;
 }
 
 /* HEADER */
-header{
-  background:#0b1220;
-  color:white;
-  padding:16px 5%;
-  position:sticky;
-  top:0;
-  z-index:100;
-  border-bottom:1px solid #1e293b;
-}
-
-.nav{
-  max-width:1150px;
-  margin:auto;
+.header{
+  background:#fff;
+  height:65px;
+  padding:0 5%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  border-bottom:1px solid #e7eaf0;
 }
 
 .logo{
-  font-size:23px;
+  font-size:22px;
   font-weight:800;
-  letter-spacing:-.5px;
+  color:#1264e8;
 }
 
-.logo span{
-  color:#38bdf8;
-}
-
-.nav-links{
-  display:flex;
-  gap:24px;
-}
-
-.nav-links a{
-  color:#cbd5e1;
+.login{
   text-decoration:none;
+  color:#1264e8;
   font-size:14px;
-}
-
-.nav-links a:hover{
-  color:white;
+  font-weight:700;
 }
 
 /* HERO */
 .hero{
-  max-width:1150px;
-  margin:auto;
-  padding:65px 5% 45px;
-}
-
-.hero-box{
-  background:#0f172a;
+  background:#0d1b35;
   color:white;
-  border-radius:24px;
-  padding:45px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-box:after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border:45px solid rgba(56,189,248,.08);
-  border-radius:50%;
-  right:-70px;
-  top:-80px;
-}
-
-.badge{
-  display:inline-block;
-  background:#172554;
-  color:#7dd3fc;
-  padding:7px 12px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
-  margin-bottom:18px;
+  padding:38px 5%;
 }
 
 .hero h1{
-  font-size:clamp(32px,6vw,56px);
-  line-height:1.05;
-  max-width:650px;
-  letter-spacing:-1.5px;
-}
-
-.hero h1 span{
-  color:#38bdf8;
+  font-size:28px;
+  line-height:1.25;
+  margin-bottom:10px;
 }
 
 .hero p{
   color:#cbd5e1;
-  margin:18px 0 25px;
-  max-width:600px;
-  line-height:1.7;
+  font-size:14px;
+  margin-bottom:22px;
 }
 
 .search{
-  max-width:580px;
-  display:flex;
+  max-width:600px;
   background:white;
-  border-radius:12px;
-  padding:5px;
-}
-
-.search input{
-  flex:1;
-  border:0;
-  outline:0;
-  padding:13px;
+  border-radius:8px;
+  padding:14px 16px;
+  color:#8a93a3;
   font-size:14px;
 }
 
-.search button{
-  border:0;
-  background:#2563eb;
-  color:white;
-  padding:0 20px;
-  border-radius:9px;
-  font-weight:bold;
-}
-
-/* COMMON */
-.section{
-  max-width:1150px;
+/* MAIN */
+.container{
+  max-width:1000px;
   margin:auto;
-  padding:35px 5%;
+  padding:28px 16px 90px;
 }
 
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  margin-bottom:20px;
+.section{
+  margin-bottom:30px;
 }
 
-.section-head h2{
-  font-size:25px;
-}
-
-.section-head p{
-  color:#64748b;
-  font-size:13px;
-  margin-top:5px;
-}
-
-/* CATEGORY */
-.categories{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:20px;
-}
-
-.category{
-  border:1px solid #dbe3ef;
-  background:white;
-  padding:10px 17px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:600;
-  color:#334155;
-}
-
-.category.active,
-.category:hover{
-  background:#2563eb;
-  color:white;
-  border-color:#2563eb;
-}
-
-/* BATCHES */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.learn-card{
-  background:white;
-  border:1px solid #e2e8f0;
-  border-radius:16px;
-  padding:20px;
-  transition:.2s;
-}
-
-.learn-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 30px rgba(15,23,42,.07);
-}
-
-.icon{
-  width:42px;
-  height:42px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#eff6ff;
-  border-radius:11px;
+.section-title{
   font-size:20px;
   margin-bottom:15px;
 }
 
-.tag{
-  display:inline-block;
-  font-size:10px;
-  font-weight:bold;
-  color:#15803d;
-  background:#dcfce7;
-  padding:5px 8px;
-  border-radius:5px;
-  margin-bottom:10px;
+/* COURSES */
+.courses{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
 
-.learn-card h3{
-  font-size:17px;
-  margin-bottom:7px;
+.course{
+  background:white;
+  border:1px solid #e3e7ee;
+  border-radius:9px;
+  padding:18px;
+  text-decoration:none;
+  color:#172033;
+  transition:.2s;
 }
 
-.learn-card p{
-  color:#64748b;
+.course:hover{
+  transform:translateY(-2px);
+  border-color:#1264e8;
+}
+
+.course-icon{
+  font-size:25px;
+  margin-bottom:12px;
+}
+
+.course h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.course p{
+  color:#70798a;
   font-size:12px;
-  line-height:1.5;
-  min-height:38px;
 }
 
-.start{
-  display:block;
-  margin-top:17px;
-  color:#2563eb;
+/* CONTINUE */
+.continue{
+  background:white;
+  border:1px solid #e3e7ee;
+  border-radius:9px;
+  padding:18px;
+}
+
+.continue-label{
+  color:#7a8494;
+  font-size:12px;
+  margin-bottom:8px;
+}
+
+.continue h3{
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.continue p{
+  color:#697386;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+.continue-btn{
+  display:inline-block;
+  background:#1264e8;
+  color:white;
+  padding:10px 16px;
+  border-radius:6px;
   text-decoration:none;
   font-size:13px;
-  font-weight:bold;
+  font-weight:700;
 }
 
-/* MATERIAL */
-.material-list{
+/* SECTIONS */
+.study-links{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
 }
 
-.material{
+.study-link{
   background:white;
-  border:1px solid #e2e8f0;
-  padding:18px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  gap:13px;
-}
-
-.material-icon{
-  font-size:23px;
-}
-
-.material h3{
-  font-size:14px;
-}
-
-.material p{
-  font-size:11px;
-  color:#64748b;
-  margin-top:4px;
-}
-
-/* JOBS */
-.jobs{
-  background:white;
-  border:1px solid #e2e8f0;
-  border-radius:16px;
-  overflow:hidden;
-}
-
-.job{
-  padding:18px 20px;
-  border-bottom:1px solid #edf2f7;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.job:last-child{
-  border-bottom:0;
-}
-
-.job-title{
-  font-weight:bold;
-  font-size:14px;
-}
-
-.job-info{
-  font-size:11px;
-  color:#64748b;
-  margin-top:5px;
-}
-
-.job-btn{
-  color:#2563eb;
-  font-size:12px;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-/* DASHBOARD */
-.dashboard{
-  background:#eaf4ff;
-  border:1px solid #cfe8ff;
-  border-radius:18px;
-  padding:25px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.dashboard h2{
-  font-size:21px;
-}
-
-.dashboard p{
-  color:#475569;
-  font-size:13px;
-  margin-top:7px;
-}
-
-.dash-btn{
-  background:#0f172a;
-  color:white;
-  text-decoration:none;
-  padding:12px 18px;
+  border:1px solid #e3e7ee;
   border-radius:9px;
-  font-size:13px;
-  font-weight:bold;
-  white-space:nowrap;
+  padding:18px;
+  text-decoration:none;
+  color:#172033;
+}
+
+.study-link span{
+  font-size:22px;
+}
+
+.study-link h3{
+  font-size:15px;
+  margin-top:10px;
+  margin-bottom:5px;
+}
+
+.study-link p{
+  color:#737d8e;
+  font-size:12px;
 }
 
 /* FOOTER */
-footer{
-  background:#0b1220;
-  color:#94a3b8;
+.footer{
   text-align:center;
-  padding:30px 20px;
-  margin-top:30px;
-}
-
-footer strong{
-  color:white;
-}
-
-footer p{
+  padding:20px;
+  color:#8a93a3;
   font-size:12px;
-  margin-top:7px;
 }
 
-/* MOBILE NAV */
-.mobile-nav{
-  display:none;
+/* BOTTOM NAV */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:62px;
+  background:white;
+  border-top:1px solid #ddd;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.bottom-nav a{
+  text-decoration:none;
+  color:#667085;
+  font-size:11px;
+  text-align:center;
+}
+
+.bottom-nav .active{
+  color:#1264e8;
+  font-weight:700;
 }
 
 /* MOBILE */
-@media(max-width:850px){
-
-  .nav-links{
-    display:none;
-  }
+@media(max-width:600px){
 
   .hero{
-    padding:25px 4%;
-  }
-
-  .hero-box{
-    padding:30px 22px;
-    border-radius:20px;
-  }
-
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .material-list{
-    grid-template-columns:1fr;
-  }
-
-  .dashboard{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .mobile-nav{
-    position:fixed;
-    display:flex;
-    bottom:0;
-    left:0;
-    right:0;
-    background:white;
-    border-top:1px solid #e2e8f0;
-    height:65px;
-    z-index:200;
-    justify-content:space-around;
-    align-items:center;
-  }
-
-  .mobile-nav a{
-    text-decoration:none;
-    color:#64748b;
-    font-size:10px;
-    text-align:center;
-  }
-
-  .mobile-nav a span{
-    display:block;
-    font-size:18px;
-    margin-bottom:3px;
-  }
-}
-
-@media(max-width:520px){
-
-  .grid{
-    grid-template-columns:1fr;
+    padding:30px 18px;
   }
 
   .hero h1{
-    font-size:35px;
+    font-size:25px;
   }
 
-  .search button{
-    padding:0 13px;
+  .container{
+    padding-left:14px;
+    padding-right:14px;
   }
 
-  .job{
-    align-items:flex-start;
+  .courses{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .study-links{
+    grid-template-columns:1fr;
+  }
+
+  .course{
+    padding:15px;
+  }
+
+  .course h3{
+    font-size:14px;
+  }
+
+  .course p{
+    font-size:11px;
+  }
+}
+
+@media(min-width:700px){
+  .bottom-nav{
+    display:none;
   }
 }
 </style>
@@ -469,281 +272,99 @@ footer p{
 
 <body>
 
-<header>
-  <div class="nav">
+<!-- HEADER -->
+<header class="header">
 
-    <div class="logo">
-      Exam<span>Junction</span>
-    </div>
-
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="batches.html">Batches</a>
-      <a href="#classes">Classes</a>
-      <a href="#material">Material</a>
-      <a href="#jobs">Jobs</a>
-      <a href="#dashboard">Dashboard</a>
-    </div>
-
+  <div class="logo">
+    ExamJunction
   </div>
+
+  <a href="#" class="login">
+    Login
+  </a>
+
 </header>
 
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
 
-  <div class="hero-box">
+  <h1>
+    Learn. Practice. Progress.
+  </h1>
 
-    <div class="badge">LEARN • PRACTICE • GROW</div>
+  <p>
+    Railway, SSC, Bihar & Banking exams ki preparation ek jagah.
+  </p>
 
-    <h1>
-      Padhai ko banao
-      <span>simple.</span>
-    </h1>
-
-    <p>
-      Railway, SSC, Bihar aur Banking exams ke liye
-      classes, study material aur useful job updates —
-      ek simple jagah par.
-    </p>
-
-    <div class="search">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Aap kya padhna chahte hain?"
-      >
-      <button onclick="searchContent()">Search</button>
-    </div>
-
+  <div class="search">
+    🔍 &nbsp; Search course, subject, chapter...
   </div>
 
 </section>
 
 
-<!-- EXAM CATEGORIES -->
+<main class="container">
+
+
+<!-- POPULAR COURSES -->
 <section class="section">
 
-  <div class="section-head">
-    <div>
-      <h2>Exam Categories</h2>
-      <p>Apne target ke according learning choose karo.</p>
-    </div>
-  </div>
+  <h2 class="section-title">
+    Popular Courses
+  </h2>
 
-  <div class="categories">
+  <div class="courses">
 
-    <button class="category active" onclick="filterCategory('all',this)">
-      All
-    </button>
+    <a href="batches.html" class="course">
 
-    <button class="category" onclick="filterCategory('railway',this)">
-      🚆 Railway
-    </button>
+      <div class="course-icon">🚆</div>
 
-    <button class="category" onclick="filterCategory('ssc',this)">
-      📚 SSC
-    </button>
-
-    <button class="category" onclick="filterCategory('bihar',this)">
-      🏛️ Bihar
-    </button>
-
-    <button class="category" onclick="filterCategory('banking',this)">
-      🏦 Banking
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- BATCHES -->
-<section class="section" id="batches">
-
-  <div class="section-head">
-    <div>
-      <h2>Start Learning</h2>
-      <p>Abhi available learning resources — FREE.</p>
-    </div>
-  </div>
-
-  <div class="grid" id="learningGrid">
-
-    <div class="learn-card" data-category="railway" data-search="railway foundation maths reasoning gs">
-      <div class="icon">🚆</div>
-      <span class="tag">FREE</span>
       <h3>Railway Foundation</h3>
-      <p>Railway preparation ko zero level se start karo.</p>
-      <a class="start" href="batches.html">Start Learning →</a>
-    </div>
 
-    <div class="learn-card" data-category="ssc" data-search="ssc foundation cgl chsl">
-      <div class="icon">📖</div>
-      <span class="tag">FREE</span>
-      <h3>SSC Foundation</h3>
-      <p>SSC exams ke basic concepts ko systematically padho.</p>
-      <a class="start" href="#classes">Start Learning →</a>
-    </div>
-
-    <div class="learn-card" data-category="railway" data-search="math maths percentage calculation basics">
-      <div class="icon">📐</div>
-      <span class="tag">FREE</span>
-      <h3>Maths Basics</h3>
-      <p>Basic maths se calculation aur concepts strong karo.</p>
-      <a class="start" href="#classes">Start Learning →</a>
-    </div>
-
-    <div class="learn-card" data-category="banking" data-search="reasoning series analogy coding">
-      <div class="icon">🧠</div>
-      <span class="tag">FREE</span>
-      <h3>Reasoning Basics</h3>
-      <p>Reasoning ke important basic topics se shuru karo.</p>
-      <a class="start" href="#classes">Start Learning →</a>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FREE CLASSES -->
-<section class="section" id="classes">
-
-  <div class="section-head">
-    <div>
-      <h2>Free Classes</h2>
-      <p>Short aur focused learning.</p>
-    </div>
-  </div>
-
-  <div class="material-list">
-
-    <div class="material">
-      <div class="material-icon">🎥</div>
-      <div>
-        <h3>Maths Concept Classes</h3>
-        <p>Topic-wise learning</p>
-      </div>
-    </div>
-
-    <div class="material">
-      <div class="material-icon">🧠</div>
-      <div>
-        <h3>Reasoning Classes</h3>
-        <p>Basic to practice</p>
-      </div>
-    </div>
-
-    <div class="material">
-      <div class="material-icon">🌍</div>
-      <div>
-        <h3>GS & GK Classes</h3>
-        <p>Exam-focused topics</p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- MATERIAL -->
-<section class="section" id="material">
-
-  <div class="section-head">
-    <div>
-      <h2>Study Material</h2>
-      <p>Revision ko easy banane ke liye.</p>
-    </div>
-  </div>
-
-  <div class="material-list">
-
-    <div class="material">
-      <div class="material-icon">📝</div>
-      <div>
-        <h3>Notes</h3>
-        <p>Topic-wise notes</p>
-      </div>
-    </div>
-
-    <div class="material">
-      <div class="material-icon">📄</div>
-      <div>
-        <h3>PDF Material</h3>
-        <p>Useful study PDFs</p>
-      </div>
-    </div>
-
-    <div class="material">
-      <div class="material-icon">⚡</div>
-      <div>
-        <h3>Short Revision</h3>
-        <p>Quick revision material</p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- JOBS -->
-<section class="section" id="jobs">
-
-  <div class="section-head">
-    <div>
-      <h2>Latest Jobs</h2>
-      <p>Important recruitment updates ek jagah.</p>
-    </div>
-  </div>
-
-  <div class="jobs">
-
-    <div class="job">
-      <div>
-        <div class="job-title">Railway Recruitment Updates</div>
-        <div class="job-info">Eligibility • Vacancy • Important Dates</div>
-      </div>
-      <div class="job-btn">View →</div>
-    </div>
-
-    <div class="job">
-      <div>
-        <div class="job-title">SSC Recruitment Updates</div>
-        <div class="job-info">Notification • Eligibility • Dates</div>
-      </div>
-      <div class="job-btn">View →</div>
-    </div>
-
-    <div class="job">
-      <div>
-        <div class="job-title">Bihar Government Jobs</div>
-        <div class="job-info">Latest recruitment information</div>
-      </div>
-      <div class="job-btn">View →</div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- DASHBOARD -->
-<section class="section" id="dashboard">
-
-  <div class="dashboard">
-
-    <div>
-      <h2>Your Learning Dashboard</h2>
       <p>
-        Aage chal kar yahin se courses, progress aur saved material manage hoga.
+        Complete Railway preparation
       </p>
-    </div>
 
-    <a class="dash-btn" href="#" onclick="dashboardMessage();return false;">
-      Open Dashboard
+    </a>
+
+
+    <a href="#" class="course">
+
+      <div class="course-icon">📝</div>
+
+      <h3>SSC Foundation</h3>
+
+      <p>
+        SSC exam preparation
+      </p>
+
+    </a>
+
+
+    <a href="#" class="course">
+
+      <div class="course-icon">📐</div>
+
+      <h3>Maths Basics</h3>
+
+      <p>
+        Zero to basic mathematics
+      </p>
+
+    </a>
+
+
+    <a href="#" class="course">
+
+      <div class="course-icon">🧠</div>
+
+      <h3>Reasoning Basics</h3>
+
+      <p>
+        Reasoning from zero level
+      </p>
+
     </a>
 
   </div>
@@ -751,116 +372,125 @@ footer p{
 </section>
 
 
-<footer>
+<!-- CONTINUE LEARNING -->
+<section class="section">
 
-  <strong>ExamJunction</strong>
+  <h2 class="section-title">
+    Continue Learning
+  </h2>
 
-  <p>Padhai. Practice. Progress.</p>
+  <div class="continue">
 
-  <p>© 2026 ExamJunction</p>
+    <div class="continue-label">
+      RAILWAY FOUNDATION
+    </div>
 
+    <h3>
+      Mathematics — Number System
+    </h3>
+
+    <p>
+      Start your Railway Mathematics preparation.
+    </p>
+
+    <a href="batches.html" class="continue-btn">
+      Continue Learning →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- STUDY -->
+<section class="section">
+
+  <h2 class="section-title">
+    Study Resources
+  </h2>
+
+  <div class="study-links">
+
+    <a href="#" class="study-link">
+
+      <span>▶</span>
+
+      <h3>Free Classes</h3>
+
+      <p>
+        Free video lectures
+      </p>
+
+    </a>
+
+
+    <a href="#" class="study-link">
+
+      <span>📄</span>
+
+      <h3>Study Material</h3>
+
+      <p>
+        Notes & PDFs
+      </p>
+
+    </a>
+
+
+    <a href="#" class="study-link">
+
+      <span>💼</span>
+
+      <h3>Latest Jobs</h3>
+
+      <p>
+        Government job updates
+      </p>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+  © 2026 ExamJunction
 </footer>
 
 
-<!-- MOBILE BOTTOM NAV -->
-<div class="mobile-nav">
+<!-- MOBILE NAV -->
+<nav class="bottom-nav">
 
-  <a href="#home">
-    <span>⌂</span>
+  <a href="index.html" class="active">
+    🏠<br>
     Home
   </a>
 
-  <a href="#batches">
-    <span>📚</span>
+  <a href="batches.html">
+    📚<br>
     Batches
   </a>
 
-  <a href="#classes">
-    <span>🎥</span>
+  <a href="#">
+    ▶<br>
     Classes
   </a>
 
-  <a href="#material">
-    <span>📄</span>
+  <a href="#">
+    📄<br>
     Material
   </a>
 
-  <a href="#jobs">
-    <span>💼</span>
+  <a href="#">
+    💼<br>
     Jobs
   </a>
 
-</div>
-
-
-<script>
-
-function filterCategory(category,button){
-
-  document.querySelectorAll(".category").forEach(function(btn){
-    btn.classList.remove("active");
-  });
-
-  button.classList.add("active");
-
-  document.querySelectorAll(".learn-card").forEach(function(card){
-
-    if(category === "all" ||
-       card.dataset.category === category){
-
-      card.style.display = "block";
-
-    }else{
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-}
-
-
-function searchContent(){
-
-  const input =
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
-
-  document.querySelectorAll(".learn-card").forEach(function(card){
-
-    const text =
-      card.dataset.search.toLowerCase();
-
-    if(text.includes(input)){
-
-      card.style.display = "block";
-
-    }else{
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-  document.getElementById("batches")
-    .scrollIntoView({behavior:"smooth"});
-
-}
-
-
-function dashboardMessage(){
-
-  alert(
-    "Dashboard feature abhi development mein hai. Jaldi hi yahan learning progress aur saved material add kiya jayega."
-  );
-
-}
-
-</script>
+</nav>
 
 </body>
 </html>
