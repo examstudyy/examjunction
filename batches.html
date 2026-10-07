@@ -1,1 +1,787 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Batches — ExamJunction</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f9fc;
+  color:#0f172a;
+  padding-bottom:75px;
+}
+
+/* HEADER */
+header{
+  background:#0b1220;
+  color:white;
+  padding:16px 5%;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#38bdf8;
+}
+
+.back{
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* HERO */
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 5% 25px;
+}
+
+.hero-box{
+  background:#0f172a;
+  color:white;
+  border-radius:22px;
+  padding:35px;
+}
+
+.badge{
+  display:inline-block;
+  background:#172554;
+  color:#7dd3fc;
+  padding:7px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(30px,6vw,45px);
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#cbd5e1;
+  line-height:1.6;
+  max-width:650px;
+}
+
+/* SUBJECTS */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 5%;
+}
+
+.section h2{
+  font-size:24px;
+  margin-bottom:6px;
+}
+
+.subtext{
+  color:#64748b;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.subject{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  padding:20px;
+  transition:.2s;
+}
+
+.subject:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(15,23,42,.07);
+}
+
+.subject-icon{
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:#eff6ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:14px;
+}
+
+.subject h3{
+  font-size:17px;
+  margin-bottom:6px;
+}
+
+.subject p{
+  color:#64748b;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.open{
+  display:inline-block;
+  margin-top:15px;
+  color:#2563eb;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* CHAPTERS */
+.chapter-box{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.chapter{
+  padding:18px 20px;
+  border-bottom:1px solid #edf2f7;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.chapter:last-child{
+  border-bottom:0;
+}
+
+.chapter-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.number{
+  width:32px;
+  height:32px;
+  border-radius:9px;
+  background:#eff6ff;
+  color:#2563eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.chapter h3{
+  font-size:14px;
+}
+
+.chapter p{
+  color:#64748b;
+  font-size:11px;
+  margin-top:4px;
+}
+
+.free{
+  background:#dcfce7;
+  color:#15803d;
+  padding:6px 9px;
+  border-radius:6px;
+  font-size:10px;
+  font-weight:bold;
+}
+
+/* INFO */
+.info{
+  background:#eaf4ff;
+  border:1px solid #cfe8ff;
+  border-radius:16px;
+  padding:22px;
+  margin-top:10px;
+}
+
+.info h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.info p{
+  color:#475569;
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+  background:#0b1220;
+  color:#94a3b8;
+  text-align:center;
+  padding:28px 20px;
+  margin-top:25px;
+}
+
+footer strong{
+  color:white;
+}
+
+footer p{
+  font-size:11px;
+  margin-top:6px;
+}
+
+/* MOBILE NAV */
+.mobile-nav{
+  position:fixed;
+  display:flex;
+  bottom:0;
+  left:0;
+  right:0;
+  height:65px;
+  background:white;
+  border-top:1px solid #e2e8f0;
+  z-index:100;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.mobile-nav a{
+  text-decoration:none;
+  color:#64748b;
+  font-size:10px;
+  text-align:center;
+}
+
+.mobile-nav span{
+  display:block;
+  font-size:18px;
+  margin-bottom:3px;
+}
+
+@media(max-width:800px){
+
+  .subjects{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:500px){
+
+  .hero-box{
+    padding:28px 20px;
+  }
+
+  .subjects{
+    grid-template-columns:1fr;
+  }
+
+  .chapter{
+    padding:15px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      Exam<span>Junction</span>
+    </div>
+
+    <a class="back" href="index.html">
+      ← Home
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-box">
+
+    <div class="badge">
+      FREE BATCH
+    </div>
+
+    <h1>Railway Foundation</h1>
+
+    <p>
+      Railway exam preparation ko zero level se
+      systematically start karo. Concepts → Practice → Revision.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <h2>Subjects</h2>
+
+  <p class="subtext">
+    Apna subject choose karke preparation start karo.
+  </p>
+
+
+  <div class="subjects">
+
+    <div class="subject">
+
+      <div class="subject-icon">📐</div>
+
+      <h3>Mathematics</h3>
+
+      <p>
+        Basic concepts se calculation aur
+        exam-level questions tak.
+      </p>
+
+      <a class="open" href="#math">
+        View Topics →
+      </a>
+
+    </div>
+
+
+    <div class="subject">
+
+      <div class="subject-icon">🧠</div>
+
+      <h3>Reasoning</h3>
+
+      <p>
+        Series, analogy, coding aur important
+        reasoning concepts.
+      </p>
+
+      <a class="open" href="#reasoning">
+        View Topics →
+      </a>
+
+    </div>
+
+
+    <div class="subject">
+
+      <div class="subject-icon">🔬</div>
+
+      <h3>General Science</h3>
+
+      <p>
+        Physics, Chemistry aur Biology ke
+        important exam topics.
+      </p>
+
+      <a class="open" href="#science">
+        View Topics →
+      </a>
+
+    </div>
+
+
+    <div class="subject">
+
+      <div class="subject-icon">🌍</div>
+
+      <h3>GK & GA</h3>
+
+      <p>
+        General Awareness aur important
+        static topics.
+      </p>
+
+      <a class="open" href="#gk">
+        View Topics →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="math">
+
+  <h2>Mathematics</h2>
+
+  <p class="subtext">
+    Foundation topics — one step at a time.
+  </p>
+
+
+  <div class="chapter-box">
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+
+        <div class="number">01</div>
+
+        <div>
+          <h3>Number System</h3>
+          <p>Basic concepts & questions</p>
+        </div>
+
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+
+        <div class="number">02</div>
+
+        <div>
+          <h3>Divisibility Rules</h3>
+          <p>Rules, tricks & practice</p>
+        </div>
+
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+
+        <div class="number">03</div>
+
+        <div>
+          <h3>Percentage</h3>
+          <p>Concepts & examples</p>
+        </div>
+
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+
+        <div class="number">04</div>
+
+        <div>
+          <h3>Profit & Loss</h3>
+          <p>Basic to exam questions</p>
+        </div>
+
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+
+        <div class="number">05</div>
+
+        <div>
+          <h3>Ratio & Proportion</h3>
+          <p>Concept + practice</p>
+        </div>
+
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="reasoning">
+
+  <h2>Reasoning</h2>
+
+  <p class="subtext">
+    Important foundation topics.
+  </p>
+
+
+  <div class="chapter-box">
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">01</div>
+
+        <div>
+          <h3>Number Series</h3>
+          <p>Basic patterns</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">02</div>
+
+        <div>
+          <h3>Analogy</h3>
+          <p>Concept & practice</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">03</div>
+
+        <div>
+          <h3>Coding-Decoding</h3>
+          <p>Basic approach</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="science">
+
+  <h2>General Science</h2>
+
+  <p class="subtext">
+    Railway exams ke liye important science areas.
+  </p>
+
+
+  <div class="chapter-box">
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">01</div>
+
+        <div>
+          <h3>Physics Basics</h3>
+          <p>Important concepts</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">02</div>
+
+        <div>
+          <h3>Chemistry Basics</h3>
+          <p>Important concepts</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">03</div>
+
+        <div>
+          <h3>Biology Basics</h3>
+          <p>Human body & important topics</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="gk">
+
+  <h2>GK & General Awareness</h2>
+
+  <p class="subtext">
+    Static GK ke selected topics.
+  </p>
+
+
+  <div class="chapter-box">
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">01</div>
+
+        <div>
+          <h3>Indian History</h3>
+          <p>Important events & facts</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">02</div>
+
+        <div>
+          <h3>Indian Geography</h3>
+          <p>Basic facts & concepts</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-left">
+        <div class="number">03</div>
+
+        <div>
+          <h3>Indian Polity</h3>
+          <p>Basic constitutional topics</p>
+        </div>
+      </div>
+
+      <span class="free">FREE</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="info">
+
+    <h3>🎯 ExamJunction ka learning system</h3>
+
+    <p>
+      Pehle concept samjho → phir examples dekho →
+      practice questions solve karo → revision karo.
+      Isi structure ko aage har batch me use kiya jayega.
+    </p>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <strong>ExamJunction</strong>
+
+  <p>Padhai. Practice. Progress.</p>
+
+  <p>© 2026 ExamJunction</p>
+
+</footer>
+
+
+<div class="mobile-nav">
+
+  <a href="index.html">
+    <span>⌂</span>
+    Home
+  </a>
+
+  <a href="batches.html">
+    <span>📚</span>
+    Batches
+  </a>
+
+  <a href="index.html#classes">
+    <span>🎥</span>
+    Classes
+  </a>
+
+  <a href="index.html#material">
+    <span>📄</span>
+    Material
+  </a>
+
+  <a href="index.html#jobs">
+    <span>💼</span>
+    Jobs
+  </a>
+
+</div>
+
+</body>
+  </html>
