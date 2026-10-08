@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ExamJunction</title>
 
 <style>
@@ -19,6 +20,7 @@ body{
   padding-bottom:70px;
 }
 
+/* HEADER */
 .header{
   height:64px;
   background:#fff;
@@ -42,6 +44,7 @@ body{
   font-weight:700;
 }
 
+/* HERO */
 .hero{
   background:#0d1b35;
   color:#fff;
@@ -58,6 +61,7 @@ body{
   font-size:13px;
 }
 
+/* MAIN */
 .container{
   max-width:900px;
   margin:auto;
@@ -69,6 +73,7 @@ body{
   margin-bottom:14px;
 }
 
+/* EXPLORE */
 .explore{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -101,6 +106,7 @@ body{
   color:#737d8d;
 }
 
+/* BATCH */
 .batch{
   display:flex;
   align-items:center;
@@ -144,6 +150,7 @@ body{
   font-size:22px;
 }
 
+/* BOTTOM NAV */
 .bottom{
   position:fixed;
   left:0;
@@ -171,7 +178,9 @@ body{
   font-weight:700;
 }
 
+/* MOBILE */
 @media(max-width:600px){
+
   .explore{
     grid-template-columns:repeat(3,1fr);
   }
@@ -179,120 +188,227 @@ body{
   .explore a{
     padding:14px 5px;
   }
+
 }
 
+/* DESKTOP */
 @media(min-width:700px){
+
   .bottom{
     display:none;
   }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header class="header">
-  <div class="logo">ExamJunction</div>
-  <a href="#" class="login">Login</a>
+
+  <div class="logo">
+    ExamJunction
+  </div>
+
+  <a href="login.html" class="login">
+    Login
+  </a>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-  <h1>Padhai. Practice. Progress.</h1>
-  <p>Government exam preparation, simple and organised.</p>
+
+  <h1>
+    Padhai. Practice. Progress.
+  </h1>
+
+  <p>
+    Government exam preparation, simple and organised.
+  </p>
+
 </section>
+
+
+<!-- MAIN -->
 
 <main class="container">
 
-  <h2 class="section-title">Explore</h2>
+
+  <!-- EXPLORE -->
+
+  <h2 class="section-title">
+    Explore
+  </h2>
 
   <div class="explore">
 
     <a href="batches.html">
-      <div class="explore-icon">🚆</div>
-      <h3>Railway</h3>
-      <p>Railway Exams</p>
+
+      <div class="explore-icon">
+        🚆
+      </div>
+
+      <h3>
+        Railway
+      </h3>
+
+      <p>
+        Railway Exams
+      </p>
+
     </a>
 
-    <a href="#">
-      <div class="explore-icon">📝</div>
-      <h3>SSC</h3>
-      <p>SSC Exams</p>
-    </a>
 
     <a href="#">
-      <div class="explore-icon">🎯</div>
-      <h3>Competitive</h3>
-      <p>Other Exams</p>
+
+      <div class="explore-icon">
+        📝
+      </div>
+
+      <h3>
+        SSC
+      </h3>
+
+      <p>
+        SSC Exams
+      </p>
+
+    </a>
+
+
+    <a href="#">
+
+      <div class="explore-icon">
+        🎯
+      </div>
+
+      <h3>
+        Competitive
+      </h3>
+
+      <p>
+        Other Exams
+      </p>
+
     </a>
 
   </div>
 
 
-  <h2 class="section-title">Popular Batches</h2>
+  <!-- POPULAR BATCHES -->
+
+  <h2 class="section-title">
+    Popular Batches
+  </h2>
+
 
   <a href="batches.html" class="batch">
 
-    <div class="batch-icon">🚆</div>
-
-    <div class="batch-info">
-      <h3>Railway Foundation</h3>
-      <p>Complete Railway preparation</p>
+    <div class="batch-icon">
+      🚆
     </div>
 
-    <div class="arrow">›</div>
+    <div class="batch-info">
+
+      <h3>
+        Railway Foundation
+      </h3>
+
+      <p>
+        Complete Railway preparation
+      </p>
+
+    </div>
+
+    <div class="arrow">
+      ›
+    </div>
 
   </a>
 
 
   <a href="#" class="batch">
 
-    <div class="batch-icon">📝</div>
-
-    <div class="batch-info">
-      <h3>SSC Foundation</h3>
-      <p>Complete SSC preparation</p>
+    <div class="batch-icon">
+      📝
     </div>
 
-    <div class="arrow">›</div>
+    <div class="batch-info">
+
+      <h3>
+        SSC Foundation
+      </h3>
+
+      <p>
+        Complete SSC preparation
+      </p>
+
+    </div>
+
+    <div class="arrow">
+      ›
+    </div>
 
   </a>
 
 
   <a href="#" class="batch">
 
-    <div class="batch-icon">🎯</div>
-
-    <div class="batch-info">
-      <h3>Competitive Exams</h3>
-      <p>Other competitive exam preparation</p>
+    <div class="batch-icon">
+      🎯
     </div>
 
-    <div class="arrow">›</div>
+    <div class="batch-info">
+
+      <h3>
+        Competitive Exams
+      </h3>
+
+      <p>
+        Other competitive exam preparation
+      </p>
+
+    </div>
+
+    <div class="arrow">
+      ›
+    </div>
 
   </a>
 
 </main>
 
 
+<!-- BOTTOM NAV -->
+
 <nav class="bottom">
 
   <a href="index.html" class="active">
-    🏠<br>Home
+    🏠<br>
+    Home
   </a>
 
   <a href="batches.html">
-    📚<br>Batches
+    📚<br>
+    Batches
   </a>
 
   <a href="#">
-    📄<br>Material
+    📄<br>
+    Material
   </a>
 
   <a href="#">
-    💼<br>Jobs
+    💼<br>
+    Jobs
   </a>
 
 </nav>
 
 </body>
-</html>
+      </html>
