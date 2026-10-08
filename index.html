@@ -7,141 +7,310 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
 font-family:Arial,sans-serif;
 background:#f5f7fb;
 color:#172033;
-padding-bottom:70px
+padding-bottom:70px;
 }
+
 .header{
-height:64px;background:#fff;display:flex;align-items:center;
-justify-content:space-between;padding:0 18px;
-border-bottom:1px solid #e5e7eb
+height:64px;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 18px;
+border-bottom:1px solid #e5e7eb;
 }
-.logo{font-size:21px;font-weight:800;color:#1264e8}
+
+.logo{
+font-size:21px;
+font-weight:800;
+color:#1264e8;
+}
+
 .login{
-text-decoration:none;color:#1264e8;font-size:14px;font-weight:700
+text-decoration:none;
+color:#1264e8;
+font-size:14px;
+font-weight:700;
 }
+
 .hero{
-background:#0d1b35;color:#fff;padding:32px 18px
+background:#0d1b35;
+color:#fff;
+padding:34px 18px;
 }
-.hero h1{font-size:27px;margin-bottom:8px}
-.hero p{color:#cbd5e1;font-size:13px}
-.container{max-width:900px;margin:auto;padding:25px 16px}
-.section-title{font-size:19px;margin-bottom:14px}
+
+.hero h1{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.hero p{
+color:#cbd5e1;
+font-size:13px;
+line-height:1.5;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:26px 16px;
+}
+
+.section-title{
+font-size:19px;
+margin-bottom:14px;
+}
+
 .explore{
-display:grid;grid-template-columns:repeat(3,1fr);
-gap:10px;margin-bottom:30px
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-bottom:30px;
 }
+
 .explore a{
-background:#fff;border:1px solid #e1e5eb;border-radius:9px;
-padding:17px 10px;text-decoration:none;color:#172033;text-align:center
+background:#fff;
+border:1px solid #e1e5eb;
+border-radius:9px;
+padding:18px 10px;
+text-decoration:none;
+color:#172033;
+text-align:center;
+transition:.2s;
 }
-.explore-icon{font-size:24px;margin-bottom:9px}
-.explore h3{font-size:14px;margin-bottom:4px}
-.explore p{font-size:11px;color:#737d8d}
+
+.explore a:hover{
+border-color:#1264e8;
+transform:translateY(-2px);
+}
+
+.explore-icon{
+font-size:25px;
+margin-bottom:9px;
+}
+
+.explore h3{
+font-size:14px;
+margin-bottom:4px;
+}
+
+.explore p{
+font-size:11px;
+color:#737d8d;
+}
+
 .batch{
-display:flex;align-items:center;background:#fff;
-border:1px solid #e1e5eb;border-radius:9px;
-padding:16px;margin-bottom:10px;
-text-decoration:none;color:#172033
+display:flex;
+align-items:center;
+background:#fff;
+border:1px solid #e1e5eb;
+border-radius:9px;
+padding:16px;
+margin-bottom:10px;
+text-decoration:none;
+color:#172033;
 }
+
 .batch-icon{
-width:45px;height:45px;border-radius:8px;
-background:#eaf2ff;display:flex;align-items:center;
-justify-content:center;font-size:22px;margin-right:13px
+width:45px;
+height:45px;
+border-radius:8px;
+background:#eaf2ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+margin-right:13px;
 }
-.batch-info{flex:1}
-.batch-info h3{font-size:15px;margin-bottom:5px}
-.batch-info p{font-size:12px;color:#737d8d}
-.arrow{color:#1264e8;font-size:22px}
+
+.batch-info{
+flex:1;
+}
+
+.batch-info h3{
+font-size:15px;
+margin-bottom:5px;
+}
+
+.batch-info p{
+font-size:12px;
+color:#737d8d;
+}
+
+.arrow{
+color:#1264e8;
+font-size:22px;
+}
+
 .bottom{
-position:fixed;left:0;right:0;bottom:0;height:64px;
-background:#fff;border-top:1px solid #ddd;
-display:flex;justify-content:space-around;
-align-items:center;z-index:10
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+height:64px;
+background:#fff;
+border-top:1px solid #ddd;
+display:flex;
+justify-content:space-around;
+align-items:center;
+z-index:10;
 }
+
 .bottom a{
-text-decoration:none;color:#667085;text-align:center;
-font-size:11px;line-height:20px
+text-decoration:none;
+color:#667085;
+text-align:center;
+font-size:11px;
+line-height:20px;
 }
-.bottom .active{color:#1264e8;font-weight:700}
+
+.bottom .active{
+color:#1264e8;
+font-weight:700;
+}
+
 @media(max-width:600px){
-.explore{grid-template-columns:repeat(3,1fr)}
-.explore a{padding:14px 5px}
+.explore{
+grid-template-columns:repeat(3,1fr);
 }
-@media(min-width:700px){.bottom{display:none}}
+
+.explore a{
+padding:14px 5px;
+}
+}
+
+@media(min-width:700px){
+.bottom{
+display:none;
+}
+}
 </style>
 </head>
 
 <body>
 
 <header class="header">
+
 <div class="logo">ExamJunction</div>
+
 <a href="login.html" class="login">Login</a>
+
 </header>
 
+
 <section class="hero">
+
 <h1>Padhai. Practice. Progress.</h1>
-<p>Government exam preparation, simple and organised.</p>
+
+<p>
+Government exam preparation, simple and organised.
+</p>
+
 </section>
+
 
 <main class="container">
 
 <h2 class="section-title">Explore</h2>
 
+
 <div class="explore">
 
 <a href="batches.html">
+
 <div class="explore-icon">🚆</div>
+
 <h3>Railway</h3>
+
 <p>Railway Exams</p>
+
 </a>
 
-<a href="#">
+
+<a href="batches.html">
+
 <div class="explore-icon">📝</div>
+
 <h3>SSC</h3>
+
 <p>SSC Exams</p>
+
 </a>
 
-<a href="#">
+
+<a href="batches.html">
+
 <div class="explore-icon">🎯</div>
+
 <h3>Competitive</h3>
+
 <p>Other Exams</p>
+
 </a>
 
 </div>
+
 
 <h2 class="section-title">Popular Batches</h2>
 
+
 <a href="batches.html" class="batch">
+
 <div class="batch-icon">🚆</div>
+
 <div class="batch-info">
+
 <h3>Railway Foundation</h3>
+
 <p>Complete Railway preparation</p>
+
 </div>
+
 <div class="arrow">›</div>
+
 </a>
 
-<a href="#" class="batch">
+
+<a href="batches.html" class="batch">
+
 <div class="batch-icon">📝</div>
+
 <div class="batch-info">
+
 <h3>SSC Foundation</h3>
-<p>Complete SSC preparation</p>
+
+<p>SSC preparation</p>
+
 </div>
+
 <div class="arrow">›</div>
+
 </a>
 
-<a href="#" class="batch">
+
+<a href="batches.html" class="batch">
+
 <div class="batch-icon">🎯</div>
+
 <div class="batch-info">
+
 <h3>Competitive Exams</h3>
-<p>Other competitive exam preparation</p>
+
+<p>Other competitive exams</p>
+
 </div>
+
 <div class="arrow">›</div>
+
 </a>
 
 </main>
+
 
 <nav class="bottom">
 
